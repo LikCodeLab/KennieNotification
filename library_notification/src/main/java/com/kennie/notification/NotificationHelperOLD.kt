@@ -8,17 +8,17 @@ import android.net.Uri
 import androidx.core.app.NotificationCompat
 import com.kennie.library.notification.R
 
-object NotificationHelper {
+object NotificationHelperOLD {
 
     /** 通知渠道-聊天消息(重要性级别-高：发出声音) */
-    private val MESSAGE = NotificationUtil.Channel(
+    private val MESSAGE = NotificationUtilOLD.Channel(
         channelId = "MESSAGE",
         name = BaseApplication.getContext().getString(R.string.channel_message),
         importance = NotificationManager.IMPORTANCE_DEFAULT
     )
 
     /** 通知渠道-@提醒消息(重要性级别-紧急：发出提示音，并以浮动通知的形式显示 & 锁屏显示 & 振动0.25s )*/
-    private val MENTION = NotificationUtil.Channel(
+    private val MENTION = NotificationUtilOLD.Channel(
         channelId = "MENTION",
         name = BaseApplication.getContext().getString(R.string.channel_mention),
         importance = NotificationManager.IMPORTANCE_HIGH,
@@ -27,14 +27,14 @@ object NotificationHelper {
     )
 
     /** 通知渠道-系统通知(重要性级别-中：无提示音) */
-    private val NOTICE = NotificationUtil.Channel(
+    private val NOTICE = NotificationUtilOLD.Channel(
         channelId = "NOTICE",
         name = BaseApplication.getContext().getString(R.string.channel_notice),
         importance = NotificationManager.IMPORTANCE_LOW
     )
 
     /** 通知渠道-音视频通话(重要性级别-紧急：发出提示音，并以浮动通知的形式显示 & 锁屏显示 & 振动4s停2s再振动4s ) */
-    private val CALL = NotificationUtil.Channel(
+    private val CALL = NotificationUtilOLD.Channel(
         channelId = "CALL",
         name = BaseApplication.getContext().getString(R.string.channel_call),
         importance = NotificationManager.IMPORTANCE_HIGH,
@@ -58,7 +58,7 @@ object NotificationHelper {
     ) {
         val intent = Intent(context, MainActivity::class.java)
 
-        val builder = NotificationUtil.createNotificationBuilder(
+        val builder = NotificationUtilOLD.createNotificationBuilder(
             context,
             MESSAGE,
             title,
@@ -72,7 +72,7 @@ object NotificationHelper {
                 .bigText(text)
         )
 
-        NotificationUtil.notify(context, id, buildDefaultConfig(builder));
+        NotificationUtilOLD.notify(context, id, buildDefaultConfig(builder));
     }
 
     /**
@@ -90,7 +90,7 @@ object NotificationHelper {
     ) {
         val intent = Intent(context, MainActivity::class.java)
 
-        val builder = NotificationUtil.createNotificationBuilder(
+        val builder = NotificationUtilOLD.createNotificationBuilder(
             context,
             MENTION,
             title,
@@ -104,7 +104,7 @@ object NotificationHelper {
                 .bigText(text)
         )
 
-        NotificationUtil.notify(context, id, buildDefaultConfig(builder));
+        NotificationUtilOLD.notify(context, id, buildDefaultConfig(builder));
     }
 
     /**
@@ -122,7 +122,7 @@ object NotificationHelper {
     ) {
         val intent = Intent(context, MainActivity::class.java)
 
-        val builder = NotificationUtil.createNotificationBuilder(
+        val builder = NotificationUtilOLD.createNotificationBuilder(
             context,
             NOTICE,
             title,
@@ -130,7 +130,7 @@ object NotificationHelper {
             intent
         )
 
-        NotificationUtil.notify(context, id, buildDefaultConfig(builder));
+        NotificationUtilOLD.notify(context, id, buildDefaultConfig(builder));
     }
 
     /**
@@ -148,7 +148,7 @@ object NotificationHelper {
     ) {
         val intent = Intent(context, MainActivity::class.java)
 
-        val builder = NotificationUtil.createNotificationBuilder(
+        val builder = NotificationUtilOLD.createNotificationBuilder(
             context,
             CALL,
             title,
@@ -156,7 +156,7 @@ object NotificationHelper {
             intent
         )
 
-        NotificationUtil.notify(context, id, buildDefaultConfig(builder));
+        NotificationUtilOLD.notify(context, id, buildDefaultConfig(builder));
     }
 
     /**

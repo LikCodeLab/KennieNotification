@@ -22,7 +22,7 @@ import androidx.core.app.NotificationCompat
  * 但是，诸如内嵌回复操作等部分新功能在较旧版本上会导致发生空操作。
  *
  */
-class NotificationUtil {
+class NotificationUtilOLD {
 
     companion object {
 

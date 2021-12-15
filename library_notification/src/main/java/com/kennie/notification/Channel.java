@@ -1,9 +1,11 @@
 package com.kennie.notification;
 
+import android.app.NotificationManager;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
